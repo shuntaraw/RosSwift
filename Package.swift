@@ -49,8 +49,6 @@ let package = Package(
                  dependencies: ["RosSwift","geometry_msgs","StdMsgs"]),
         .target( name: "msgbuilder",
                  dependencies: msgDep),
-        .target( name: "msgbuilderLib",
-                 dependencies: ["StdMsgs"]),
         .target( name: "geometry_msgs",
                  dependencies: ["StdMsgs","RosTime"],
                  path: "Sources/msgs/geometry_msgs"),
@@ -83,4 +81,11 @@ let package = Package(
 #if os(Linux)
 package.dependencies.append(
     .package(url: "https://github.com/IBM-Swift/OpenSSL.git", from: "2.2.2"))
+package.targets.append(
+    .target( name: "msgbuilderLib",
+             dependencies: ["StdMsgs","OpenSSL"]))
+#else
+package.targets.append(
+    .target( name: "msgbuilderLib",
+             dependencies: ["StdMsgs"]))
 #endif
