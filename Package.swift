@@ -28,7 +28,7 @@ let package = Package(
         .package(url: "https://github.com/apple/swift-nio.git", from: "2.3.0"),
         .package(url: "https://github.com/tgu/BinaryCoder.git", from: "1.1.0"),
         .package(url: "https://github.com/IBM-Swift/HeliumLogger.git", from: "1.8.1"),
-        .package(url: "https://github.com/attaswift/Deque.git", from: "3.1.1"),
+        .package(url: "https://github.com/shuntaraw/Deque.git", from: "master"),
         .package(url: "https://github.com/apple/swift-nio-extras.git", from: "1.1.0"),
     ],
     targets: [
